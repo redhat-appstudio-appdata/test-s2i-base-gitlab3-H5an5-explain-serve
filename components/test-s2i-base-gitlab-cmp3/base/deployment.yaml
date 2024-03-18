@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: test-s2i-base-gitlab-cmp3
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: test-s2i-base-gitlab-cmp3
+    app.kubernetes.io/part-of: test-s2i-base-gitlab3
+  name: test-s2i-base-gitlab-cmp3
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: test-s2i-base-gitlab-cmp3
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: test-s2i-base-gitlab-cmp3
+    spec:
+      containers:
+      - image: image
+        imagePullPolicy: Always
+        name: container-image
+        resources: {}
+status: {}
